@@ -20,7 +20,8 @@ RUN python -m venv /py && \
     adduser \
         --disabled-password \
         --no-create-home \
-        django-user
+        django-user && \
+    chown -R django-user /py  # Set ownership of the /py directory to django-user
 
 ENV PATH="/py/bin:$PATH"
 
